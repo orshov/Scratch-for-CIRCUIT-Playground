@@ -42,6 +42,8 @@ void loop()
 //    pixeln = 0;
 //    CircuitPlayground.clearPixels();
   readSerialPort();
+  
+
 }
 
 void configurePins()
@@ -172,6 +174,9 @@ void updateActuator(byte pinNumber)
   analogWrite(9, arduinoPins[9].state);
   digitalWrite(10, arduinoPins[10].state);
   digitalWrite(13, arduinoPins[13].state);
+  CircuitPlayground.strip.setPixelColor(arduinoPins[5].state, arduinoPins[4].state, arduinoPins[7].state, arduinoPins[8].state);
+  CircuitPlayground.strip.show();
+  
 }
 
 void sendUpdateServomotors()
